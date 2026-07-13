@@ -1,0 +1,11 @@
+# IDE
+.kiro/
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Stitch prompts (internal, not for client)
+ProjectDocs/StitchPrompts/
