@@ -1,4 +1,4 @@
-# Eze-Cart — Screen Interaction Flows (Step by Step)
+# Muciriz — Screen Interaction Flows (Step by Step)
 
 > Detailed tap-by-tap interactions for the most interaction-heavy screens.
 
@@ -8,7 +8,7 @@ Land on form → enter Name → enter WhatsApp Number (phone keyboard)
 → enter Delivery Address + Nearest Landmark → open Service Location dropdown → select
 → tap Register (enabled once valid) → button disables + loader
 → POST /auth/register (server enforces UNIQUE number)
-   → OTP sent via AWS SNS → OTP Verification (C04): enter code → Verify
+   → OTP sent via WhatsApp Business API (primary) / AWS SNS (fallback) → OTP Verification (C04): enter code → Verify
        → wrong/expired → inline error + Resend (countdown)
        → valid → store cached session → navigate to Category Home → welcome toast
    → (logged-out re-entry of an already-verified number → signed in directly, NO OTP)
@@ -28,12 +28,14 @@ Category Home: offers banner rotates at top → tap a category card
 ```
 Review items → adjust qty / remove (confirm on remove)
 → "Recommended for you" section loads → tap quick-add on a suggestion → item added, drops from list, cart badge updates
-→ open Delivery Time dropdown (per-location if set, else global) → select
-→ choose Payment: Gpay on Delivery | Cash on Delivery (Gpay = manual transfer, no UPI shown)
-→ tap Place Order (enabled when cart≥1 + time + payment chosen) → loader
-→ POST /orders
+→ select Delivery Date (today or future for pre-order) → date picker
+→ open Delivery Time Slot dropdown (per-location if set, else global, for selected date) → select
+→ choose Payment: Gpay on Delivery | Cash on Delivery
+  → if Gpay selected: show company UPI ID + "Pay via GPay" deep-link button (opens GPay app with amount pre-filled)
+→ tap Place Order (enabled when cart≥1 + date + time + payment chosen) → loader
+→ POST /orders (with deliveryDate, deliveryTimeId)
    → error → inline/toast + retry (cart preserved)
-   → success → cart clears → Order Confirmation → download invoice available → welcome/success toast
+   → success → cart clears → Order Confirmation → download invoice (GST/non-GST split) → success toast
 ```
 
 ## Staff — Fulfill Order (S04)

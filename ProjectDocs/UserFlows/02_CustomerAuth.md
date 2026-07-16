@@ -5,7 +5,7 @@
 Splash (C01) → Onboarding (C02, first launch) → Registration (C03)
 Customer enters: Name, WhatsApp Number, Delivery Address + Nearest Landmark, Service Location (dropdown)
 → Submit (server enforces UNIQUE number)
-→ OTP sent via AWS SNS → OTP Verification (C04)  [REQUIRED for first-time verification]
+→ OTP sent via WhatsApp Business API (primary) / AWS SNS SMS (fallback) → OTP Verification (C04)  [REQUIRED for first-time verification]
 → Verify code → number marked verified
 → Session token cached on device
 → Category Home (C05) scoped to chosen Service Location
@@ -22,7 +22,7 @@ Splash (C01) → check cached token → GET /auth/me
 ```
 Logged-out user enters mobile number → POST /auth/login/customer
 → number exists AND already verified → sign in DIRECTLY (no OTP) → Category Home (C05)
-→ not verified / new → send OTP via AWS SNS → OTP Verification (C04)
+→ not verified / new → send OTP via WhatsApp Business API (primary) / AWS SNS (fallback) → OTP Verification (C04)
 ```
 
 ## Alternate / Failure
@@ -36,4 +36,4 @@ Logged-out user enters mobile number → POST /auth/login/customer
 - The same phone number can also be a **Staff** account used in the Staff App (phone + password). The Customer App resolves the **customer** identity only; the two apps authenticate independently. See `01_UserRoles.md` §8.
 
 ## Security Notes
-- Identity is now hardened: **OTP verification via AWS SNS + unique numbers** (Q2). See `Suggestions/02_SecuritySuggestions.md`.
+- Identity is now hardened: **OTP verification via WhatsApp Business API (primary) / AWS SNS (fallback) + unique numbers** (Q2). See `Suggestions/02_SecuritySuggestions.md`.

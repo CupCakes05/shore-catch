@@ -1,4 +1,4 @@
-# Eze-Cart — Design Language
+# Muciriz — Design Language
 
 > Consolidated design system notes from client branding requirements. Applies to all three apps for a consistent, minimal look.
 

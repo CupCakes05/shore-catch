@@ -15,6 +15,7 @@ Authenticated Customer.
 ## Key UI Elements
 - Notifications preference toggle(s) — in-app / push / SMS (Confirmed Q18); opens Notifications inbox (C14).
 - No language preference — **English only** (Confirmed Q17).
+- **Customer Care / Help (Requirement #6):** "Contact Us" or "Help" entry showing the configured customer care phone number and/or WhatsApp number (from `SystemConfig`). Tap-to-call and tap-to-open-WhatsApp actions (device intents). Hidden if not configured by Admin.
 - Legal links: Privacy Policy, Terms, About, Help/FAQ, Contact (→ C15). Legal pages open the **canonical Admin-hosted public URLs** (`/privacy`, `/terms`, optional `/about`, `/contact`) via browser / in-app webview — same URLs used for the Play Store listing.
 - **Logout** button (with confirm dialog).
 - App version / build info.
@@ -39,5 +40,5 @@ Authenticated Customer.
 - Grouped list with labels; toggles have accessible states; destructive logout confirmed.
 
 ## Dependencies
-- `/auth/logout`, local prefs.
+- `/auth/logout`, `/config` (for customer care contact), local prefs.
 - Admin-hosted public legal pages (`/privacy`, `/terms`, optional `/about`, `/contact`) — canonical legal content via C15 (static/hardcoded in Next.js, not an admin CMS per Q19).

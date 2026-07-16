@@ -1,4 +1,4 @@
-# Eze-Cart — UX States, Feedback & Micro-Interactions
+# Muciriz — UX States, Feedback & Micro-Interactions
 
 > Cross-cutting UX rules for every data-driven screen across all three apps.
 

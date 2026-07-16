@@ -3,7 +3,7 @@
 **App:** Admin Panel (Next.js, web)
 
 ## Purpose
-Full read view of a single order for Admin oversight, including items, customer, fulfillment timeline, payment, and invoice.
+Full read view of a single order for Admin oversight, including items (with GST details), customer, fulfillment timeline with **timestamps**, payment, and invoice.
 
 ## Users
 Main Admin.
@@ -13,12 +13,18 @@ Main Admin.
 - **To:** back; download invoice.
 
 ## Key UI Elements
-- Order header: number, date/time, status chip.
+- Order header: number, date/time, status chip, **pre-order badge** (if applicable), **"Placed by: Staff / Customer"** indicator.
 - Customer: name, WhatsApp number, delivery address + landmark, service location.
-- Itemized products (snapshot): name, weight, qty, unit price, line total; total.
-- Delivery time; payment preference and collected method.
-- **Fulfillment timeline:** who confirmed order/delivery/payment and when (staff audit).
-- **Download Invoice** button.
+- **Delivery date + time slot** (prominently shown; future date highlighted for pre-orders).
+- Itemized products (snapshot): name, weight, qty, unit price, **GST (rate + amount if applicable)**, line total; subtotal, **GST total**, order total.
+- Payment preference and collected method.
+- **Fulfillment timeline with timestamps (Requirement #2):**
+  - Order Placed: date/time
+  - Order Confirmed: date/time + staff name
+  - Delivered: date/time + staff name
+  - Payment Confirmed: date/time + staff name + method (Gpay/Cash)
+  - Time between transitions shown (e.g., "Confirmed in 15 min", "Delivered in 2h")
+- **Download Invoice** button (PDF with GST/non-GST split).
 - (Optional) Admin override actions — only if explicitly requested (not default).
 
 ## States
@@ -33,13 +39,14 @@ Main Admin.
 
 ## Business Rules
 - Primarily read-only oversight.
-- Snapshots preserve historical accuracy.
+- Snapshots preserve historical accuracy (including GST snapshot at time of purchase).
+- State transition timestamps enable staff performance tracking.
 
 ## Validation / Permissions
 - Admin only.
 
 ## Responsive / Accessibility
-- Accessible layout; timeline text+icon; invoice button labeled.
+- Accessible layout; timeline text+icon; invoice button labeled; timestamps clearly formatted.
 
 ## Dependencies
 - `/orders/{id}`, `/orders/{id}/invoice`.

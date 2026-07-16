@@ -13,7 +13,7 @@ Guest / returning Staff.
 - **To:** Order List (S03) if valid session; Login (S02) otherwise.
 
 ## Key UI Elements
-- Logo/app name (Eze-Cart Staff), minimal white background, loading indicator.
+- Logo/app name (Muciriz Staff), minimal white background, loading indicator.
 
 ## States
 - **Loading:** default (session check via `/auth/me`).

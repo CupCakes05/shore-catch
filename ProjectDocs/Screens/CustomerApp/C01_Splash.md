@@ -16,7 +16,7 @@ Guest / returning Customer.
   - Registration (C03) if no/invalid session and onboarding already seen.
 
 ## Key UI Elements
-- App logo / name (Eze-Cart) centered.
+- App logo / name (Muciriz) centered.
 - Minimal background (white), brand color accent.
 - Subtle loading indicator.
 

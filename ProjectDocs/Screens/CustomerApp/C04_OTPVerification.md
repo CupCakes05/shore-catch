@@ -2,7 +2,7 @@
 
 **App:** Customer (Flutter/Android)
 
-> ✅ **Confirmed required (Q2).** Every first-time customer number must be OTP-verified. OTP is sent via **AWS SNS**. (Re-entry of an already-verified number skips this screen — Q3.)
+> ✅ **Confirmed required (Q2).** Every first-time customer number must be OTP-verified. OTP is sent via **WhatsApp Business API** (primary channel) with **AWS SNS SMS** as fallback (Requirement #1). (Re-entry of an already-verified number skips this screen — Q3.)
 
 ## Purpose
 Verify ownership of the WhatsApp/phone number provided at registration, preventing impersonation and duplicate/fake accounts. Numbers are unique.
@@ -15,10 +15,11 @@ Guest completing registration.
 - **To:** Category Home (C05) on success; back to Registration on failure/edit number.
 
 ## Key UI Elements
-- Masked number display ("Code sent to +91 •••• ••1234").
+- Masked number display ("Code sent to +91 •••• ••1234 on WhatsApp").
+- Note: "OTP sent to your WhatsApp. Check your messages." (with fallback note if SMS is used).
 - OTP input (4–6 digit boxes).
 - "Verify" button.
-- "Resend code" with countdown timer.
+- "Resend code" with countdown timer (resend may use WhatsApp or SMS fallback).
 - "Edit number" link.
 
 ## States
@@ -39,4 +40,4 @@ Guest completing registration.
 - Auto-advance between OTP boxes; paste support; screen-reader announces errors and countdown.
 
 ## Dependencies
-- **AWS SNS** for OTP delivery (see `07_Integrations.md`), `/auth/send-otp`, `/auth/verify-otp`.
+- **WhatsApp Business API** (primary OTP delivery) + **AWS SNS** (SMS fallback) (see `07_Integrations.md`), `/auth/send-otp`, `/auth/verify-otp`.

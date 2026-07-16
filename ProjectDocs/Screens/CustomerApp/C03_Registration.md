@@ -43,7 +43,7 @@ Guest (new customer).
 - Tap legal links.
 
 ## Business Rules (Confirmed Q2/Q3/Q4)
-- New number → OTP via AWS SNS → verify (C04) → account active → session cached for **auto-login**.
+- New number → OTP via WhatsApp Business API (primary) / AWS SNS (fallback) → verify (C04) → account active → session cached for **auto-login**.
 - Mobile numbers are **unique**.
 - Re-entry of an **already-verified** number signs the user in **without OTP**.
 - Chosen Service Location determines the catalog shown post-login (changeable later via Profile — Q12).

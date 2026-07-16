@@ -16,9 +16,9 @@ Authenticated Customer.
 
 ## Key UI Elements
 - **Product cards, one-by-one going downward** (vertical list). Each product is a **centered card**.
-  - **Front of card:** product details — Name, Gross Weight, Net Weight, Price.
+  - **Front of card:** product details — Name, Gross Weight, Net Weight, Price, GST indicator (if applicable, e.g., "+5% GST"), **stock indicator** (if out of stock: "Out of Stock — Pre-order available" badge).
   - **Back of card (on tap/flip):** product **image**. Tapping flips between the two sides (front/back like two sides of a card).
-  - **Quantity add control** below each card: add button; when quantity > 0, show quantity stepper (− / count / +).
+  - **Quantity add control** below each card: add button; when quantity > 0, show quantity stepper (− / count / +). If out of stock, button label changes to "Pre-order" and adds to cart with pre-order context.
 - **Category scroll strip:** a slow-scrolling horizontal strip of all categories (image + name) behaving like buttons; tapping switches the displayed category's products.
   - **Back arrow** on the **left side** of the scroll strip → returns to Category Home (C05).
 - App bar with cart icon + badge.

@@ -30,6 +30,7 @@ Main Admin.
 ## Business Rules (Confirmed Q8)
 - **Global + per-location:** a global set exists; each location may define its own. **Per-location overrides global** — if a location has its own delivery times, customers there see those; otherwise the global defaults apply.
 - At least one applicable (per-location or global) active delivery time must exist for customers to check out — surface a warning if none.
+- **Pre-order support (Requirement #3):** delivery times define available time slots. At checkout, customers select a **date + time slot**. When today's slots are exhausted, the system presents future available dates. The delivery time options apply to all dates (same slots available daily unless extended in future).
 
 ## Validation / Permissions
 - Label required. Admin only.

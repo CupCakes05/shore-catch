@@ -3,7 +3,7 @@
 **App:** Customer (Flutter/Android)
 
 ## Purpose
-Briefly introduce Eze-Cart on first launch: browse local fresh goods, order, pay on delivery. Sets expectations before registration.
+Briefly introduce Muciriz on first launch: browse local fresh goods, order, pay on delivery. Sets expectations before registration.
 
 ## Users
 First-time Guest.

@@ -3,7 +3,7 @@
 **App:** Staff (Flutter/Android)
 
 ## Purpose
-Authenticate a delivery staff member. Credentials are created by the Main Admin and tied to a Service Location. On login, the app loads the staff's assigned location and permissions.
+Authenticate a delivery staff member. Credentials are created by the Main Admin and tied to one or more Service Locations. On login, the app loads the staff's assigned locations and permissions.
 
 ## Users
 Guest (staff not logged in).

@@ -1,4 +1,4 @@
-# Admin Panel (Next.js, web) — Screen Inventory
+# Muciriz Admin (Next.js, web) — Screen Inventory
 
 > Main Admin web console. Manages everything, cascading by Service Location. Each screen has a dedicated doc.
 
@@ -9,17 +9,18 @@
 | A01 | Login | `A01_Login.md` | Admin authentication |
 | A02 | Dashboard (Home) | `A02_Dashboard.md` | Overview KPIs + navigation |
 | A03 | Service Locations | `A03_ServiceLocations.md` | Manage locations (add/remove) |
-| A04 | Categories | `A04_Categories.md` | Manage categories per location (+image); manage category recommended products |
-| A05 | Products | `A05_Products.md` | Manage products per category (+image); approve staff submissions (Q11); manage recommended products |
-| A06 | Delivery Times | `A06_DeliveryTimes.md` | Manage delivery time options |
-| A07 | Staff Management | `A07_StaffManagement.md` | Create staff, assign location + permissions |
+| A04 | Categories | `A04_Categories.md` | Manage categories (multi-location assignment); manage category recommended products |
+| A05 | Products | `A05_Products.md` | Manage products (multi-location, GST, stock); approve staff submissions (Q11); manage recommended products |
+| A06 | Delivery Times | `A06_DeliveryTimes.md` | Manage delivery time options (supports pre-order date+slot) |
+| A07 | Staff Management | `A07_StaffManagement.md` | Create staff, assign multiple locations + permissions (incl. update_stock, record_misc_purchase, place_shop_sale) |
 | A08 | Offers / Notifications | `A08_Offers.md` | Create/publish offers to customer app |
-| A09 | Orders Dashboard | `A09_OrdersDashboard.md` | Orders by location; delivered vs pending |
-| A10 | Order Detail | `A10_OrderDetail.md` | Single order full view |
-| A11 | Sales Reports | `A11_SalesReports.md` | Total sales by location |
-| A12 | Customer History Lookup | `A12_CustomerHistory.md` | Lookup by name / WhatsApp number |
-| A13 | Admin Profile / Settings | `A13_ProfileSettings.md` | Admin account, password, preferences |
+| A09 | Orders Dashboard | `A09_OrdersDashboard.md` | Orders by location; delivered vs pending; pre-orders |
+| A10 | Order Detail | `A10_OrderDetail.md` | Single order full view with state transition timestamps, GST details |
+| A11 | Sales Reports | `A11_SalesReports.md` | Sales, profit/loss, staff performance, misc purchases reporting |
+| A12 | Customer History Lookup | `A12_CustomerHistory.md` | Lookup by name / WhatsApp number; edit customer details |
+| A13 | Admin Profile / Settings | `A13_ProfileSettings.md` | Admin account, password, system config (GPay UPI ID, customer care contact) |
 | A14 | Error / Empty / 404 | `A14_ErrorStates.md` | Web error & empty states |
+| A15 | Inventory Management | `A15_InventoryManagement.md` | Stock levels, purchase records, profit/loss (Requirements #9, #10) |
 
 ## Public (Unauthenticated) Pages
 
@@ -29,7 +30,7 @@ The Admin Panel also serves a **small public-facing surface** — legal/informat
 |---|------|--------------|---------|
 | P01 | Privacy Policy | `/privacy` | How customer/staff data (name, mobile/WhatsApp #, address, OTP) is collected & used — **the URL supplied to the Play Console** |
 | P02 | Terms & Conditions | `/terms` | Usage/order/delivery/payment terms |
-| P03 | About (optional) | `/about` | About Eze-Cart |
+| P03 | About (optional) | `/about` | About Muciriz |
 | P04 | Contact (optional) | `/contact` | Business contact info |
 
 **Notes**

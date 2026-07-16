@@ -24,9 +24,9 @@ The **canonical** legal content lives at the **public, unauthenticated pages hos
 |------|------------------------------|---------|
 | Privacy Policy | `/privacy` | How customer data (name, WhatsApp #, address, OTP) is collected & used — **also the Play Store Privacy Policy URL** |
 | Terms & Conditions | `/terms` | Usage terms, order/delivery/payment terms |
-| About | `/about` (optional) | About Eze-Cart |
+| About | `/about` (optional) | About Muciriz |
 | Help / FAQ | in-app / `/contact` | Common questions (ordering, delivery times, payment on delivery) |
-| Contact | `/contact` (optional) | Business contact info (phone/WhatsApp/email) |
+| Contact / Customer Care | `/contact` (optional) | Business contact info (phone/WhatsApp/email); **also see C13 for in-app customer care contact** (Requirement #6) |
 
 ## Key UI Elements
 - Title + scrollable content. Legal pages (Privacy, Terms, About, Contact) **render/link the Admin-hosted canonical URLs** (in-app webview or external browser).
